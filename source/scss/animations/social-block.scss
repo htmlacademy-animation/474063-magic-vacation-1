@@ -1,0 +1,46 @@
+.social-block {
+
+  &__toggler::before {
+    transition: all 0.2s ease;
+  }
+
+  &__list {
+    transition: all 0.2s ease;
+  }
+
+  &__list li:nth-child(1) a {
+    margin-top: 10px;
+  }
+
+  &__list li:nth-child(2) a {
+    margin-top: 20px;
+  }
+
+  &__list li:nth-child(3) a {
+    margin-top: 30px;
+  }
+
+  &__link {
+    opacity: 0;
+    transition: all 0.2s ease;
+  }
+
+  &__link--fb {
+    transition-duration: 0.2s;
+  }
+
+  &__link--insta {
+    transition-duration: 0.5s;
+  }
+
+  &__link--vk {
+    transition-duration: 0.8s;
+  }
+
+  &__toggler:hover + &__list a, &__toggler:focus + &__list a {
+    opacity: 1;
+    margin-top: 0;
+  }
+
+
+}
