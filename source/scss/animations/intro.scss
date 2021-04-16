@@ -1,0 +1,15 @@
+.intro {
+  &__message p {
+    position: relative;
+    bottom: -20px;
+    opacity: 0;
+    transition: opacity 0.4s ease-in 1s, bottom 0.4s ease-in 1s;
+  }
+}
+
+.active .intro  {
+  &__message p {
+    bottom: 0;
+    opacity: 1;
+  }
+}
