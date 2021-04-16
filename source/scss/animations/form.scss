@@ -1,0 +1,22 @@
+.form {
+  justify-content: flex-end;
+
+  &__field  {
+    visibility: hidden;
+    width: 20px;
+    padding: 0 3.6rem;
+    transition: visibility 0.4s ease-in 0.6s, width 0.4s ease-in 0.6s, left 0.4s ease-in 0.6s, padding 0.4s ease-in 0.6s;
+  }
+
+  &__button {
+    max-width: 180px;
+  }
+}
+
+.active .form  {
+  &__field  {
+    visibility: visible;
+    width: calc(100% - 21rem);
+    padding: 0 5.6rem;
+  }
+}
