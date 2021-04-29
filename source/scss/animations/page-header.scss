@@ -1,29 +1,60 @@
-.page-header__menu {
-  a {
-    transition: color 0.2s ease;
+.page-header {
+  &__logo {
+    opacity: 0;
+    transform: translateX(-10px);
+    transition: transform 0.2s $easeOutCubicCustom 0.3s, opacity 0.2s $easeOutCubicCustom 0.3s;
   }
 
-  a::after {
-    content: "";
-    position: absolute;
-    bottom: 0;
-    width: 0;
-    height: 2px;
-    background-color: #ffffff;
-    right: 0;
-    left: auto;
-    display: block;
-    transition: width 0.3s ease;
+  &__menu {
+    opacity: 0;
+    transition: opacity 0.3s $easeOutCubicCustom 0.4s;
+
+    a {
+      transition: color 0.2s ease;
+    }
+
+    a::after {
+      content: "";
+      position: absolute;
+      bottom: 0;
+      width: 0;
+      height: 2px;
+      background-color: #ffffff;
+      right: 0;
+      left: auto;
+      display: block;
+      transition: width 0.3s ease;
+    }
+
+    a.active::after {
+      width: 100%;
+    }
+
+    a:hover::after {
+      width: 100%;
+      right: auto;
+      left: 0;
+    }
+
   }
 
-  a.active::after {
-    width: 100%;
+  &__social {
+    visibility: hidden;
+    transition: visibility 0.1s $easeOutCubicCustom 0.5s;
+  }
+}
+
+.body-loaded .page-header {
+  &__logo {
+    opacity: 1;
+    transform: translateX(0);
   }
 
-  a:hover::after {
-    width: 100%;
-    right: auto;
-    left: 0;
+  &__social {
+    visibility: visible;
   }
 
+  &__menu {
+    opacity: 1;
+  }
 }

@@ -1,0 +1,8 @@
+.screen__footer {
+  transform: translateY(30px);
+  transition: transform 0.3s $easeOutCubicCustom;
+}
+
+.body-loaded .screen__footer {
+  transform: translateY(0);
+}

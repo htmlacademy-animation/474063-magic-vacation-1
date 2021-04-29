@@ -8,6 +8,7 @@ export default class FullPageScroll {
     this.menuElements = document.querySelectorAll(`.page-header__menu .js-menu-link`);
 
     this.activeScreen = 0;
+    this.onBodyHandler = this.onBodyLoad.bind(this);
     this.onScrollHandler = this.onScroll.bind(this);
     this.onUrlHashChengedHandler = this.onUrlHashChanged.bind(this);
   }
@@ -15,8 +16,13 @@ export default class FullPageScroll {
   init() {
     document.addEventListener(`wheel`, throttle(this.onScrollHandler, this.THROTTLE_TIMEOUT, {trailing: true}));
     window.addEventListener(`popstate`, this.onUrlHashChengedHandler);
+    document.addEventListener(`DOMContentLoaded`, this.onBodyHandler);
 
     this.onUrlHashChanged();
+  }
+
+  onBodyLoad() {
+    document.querySelector(`body`).classList.add(`body-loaded`);
   }
 
   onScroll(evt) {
