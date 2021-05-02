@@ -58,9 +58,17 @@ export default class FullPageScroll {
 
   changeActiveMenuItem() {
     const activeItem = Array.from(this.menuElements).find((item) => item.dataset.href === this.screenElements[this.activeScreen].id);
+    const bodyLoaded = document.querySelector(`.body-loaded`);
     if (activeItem) {
-      this.menuElements.forEach((item) => item.classList.remove(`active`));
-      activeItem.classList.add(`active`);
+      if (bodyLoaded) {
+        this.menuElements.forEach((item) => item.classList.remove(`active`));
+        activeItem.classList.add(`active`);
+      } else {
+        setTimeout(() => {
+          this.menuElements.forEach((item) => item.classList.remove(`active`));
+          activeItem.classList.add(`active`);
+        }, 1000);
+      }
     }
   }
 

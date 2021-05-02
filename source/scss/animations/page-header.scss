@@ -26,16 +26,6 @@
       transition: width 0.3s ease;
     }
 
-    a.active::after {
-      width: 100%;
-    }
-
-    a:hover::after {
-      width: 100%;
-      right: auto;
-      left: 0;
-    }
-
   }
 
   &__social {
@@ -56,5 +46,23 @@
 
   &__menu {
     opacity: 1;
+
+    a.active::after {
+      width: 100%;
+      left: 0;
+    }
+
+    a:hover::after {
+      width: 100%;
+      right: auto;
+      left: 0;
+    }
+
+    a:hover::after {
+      width: 100%;
+      right: auto;
+      left: 0;
+    }
+
   }
 }
